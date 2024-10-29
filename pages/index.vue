@@ -31,6 +31,7 @@ const { getMoviesList } = useMovies();
 .catalog {
   background-color: rgb(26, 25, 25);
   min-height: 2000px;
+  min-width: 995px;
 }
 
 .catalog__wrapper {
@@ -38,7 +39,7 @@ const { getMoviesList } = useMovies();
   justify-content: left;
   flex-wrap: wrap;
   background-color: rgb(26, 25, 25);
-  width: 1000px;
+  width: 995px;
   margin: 0 auto;
   padding-top: 30px;
 }
