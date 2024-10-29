@@ -2,6 +2,6 @@
   <div>
     <!-- <NuxtRouteAnnouncer />
     <NuxtWelcome /> -->
-    hello !!!!!!!!!!!!!!!!!!!!!!!!!11
+    hello !!!!!!!!!!!!!!!!!!!!!!!!! world!!!!!!!!!!!!!1
   </div>
 </template>
