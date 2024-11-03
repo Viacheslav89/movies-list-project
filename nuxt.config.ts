@@ -3,5 +3,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: ['@nuxthub/core'],
-  ssr: false,
+  // ssr: false,
+  // components: [
+  //   {
+  //     path: '~/components',
+  //     pathPrefix: false,
+  //   },
+  // ],
+  
 })

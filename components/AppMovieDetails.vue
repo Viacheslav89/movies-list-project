@@ -8,7 +8,7 @@
           <h4 class="movie__title">{{ movie?.nameRu }}</h4>
 
           <div class="movie__rating">
-            {{ `<  ${movie?.ratingKinopoisk} >` }}
+            {{ movie?.ratingKinopoisk }}
           </div>
         </div>
 
@@ -33,10 +33,13 @@
 </template>
 
 <script setup lang="ts">
-import type { Movie } from '~/type';
-import AppNavigation from './AppNavigation.vue';
+import type { Movie } from './../type';
+// import AppNavigation from './AppNavigation.vue';
+
+
 const { id } = useRoute().params;
 const { moviesList } = useMovies();
+
 
 const movie = moviesList.value.find(
   (movie: Movie) => movie.kinopoiskId.toString() === id
@@ -52,9 +55,11 @@ if (!movie?.kinopoiskId) {
   background-color: rgb(26, 25, 25);
   height: 1200px;
   padding-top: 50px;
+  min-width: 1000px;
+  
 
   &__wrapper {
-    width: 1000px;
+    width: 800px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -62,8 +67,10 @@ if (!movie?.kinopoiskId) {
 
   &__wrapper--description {
     background-color: rgb(226, 226, 226);
-    width: 100%;
+    // width: 100%;
     padding-left: 30px;
+    padding-bottom: 20px;
+
   }
 
   &__header-wrapper {
@@ -111,7 +118,9 @@ if (!movie?.kinopoiskId) {
   }
 
   &__image {
+    display: block;
     height: 100%;
+    width: 100%;
 
   }
 }

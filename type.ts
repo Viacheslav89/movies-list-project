@@ -11,7 +11,6 @@ export interface Movie {
         genre: string;
       }
     ];
-    // posterUrl: string,
     posterUrlPreview: string,
     ratingKinopoisk: number,
     year: number,
@@ -26,4 +25,4 @@ export interface Movie {
   export interface SearchFn {
     (subString: string): Promise<boolean>;
   }
-  
+

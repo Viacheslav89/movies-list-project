@@ -10,10 +10,10 @@
 </template>
 
 
-<script setup lang="ts">
+<script setup>
 import { useMovies } from "./../composables/useMovies"
-import AppMovieCard from "./../components/AppMovieCard.vue"
-import AppPagination from "./../components/AppPagination.vue"
+// import AppMovieCard from "./../components/AppMovieCard.vue"
+// import AppPagination from "./../components/AppPagination.vue"
 
 
 const { fetchMovies } = useMovies();

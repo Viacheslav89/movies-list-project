@@ -5,11 +5,12 @@ const moviesRequest = ref<MoviesRequest | null>(null);
 const searchMovieName = ref("");
 const isHorizontalList = ref<boolean>(false);
 const page = ref(1);
-const totalPages = ref(0)
+const totalPages = ref(0);
 
 
 export const useMovies = () => {
   const fetchMovies = async () => {
+
     const response = await axios.get(
       `https://kinopoiskapiunofficial.tech/api/v2.2/films?order=RATING&type=ALL&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=${page.value}`,
       {
@@ -18,6 +19,7 @@ export const useMovies = () => {
         },
       }
     );
+
     moviesRequest.value = response.data;
     totalPages.value = response.data.totalPages;
   };
@@ -26,7 +28,7 @@ export const useMovies = () => {
   const moviesList = computed(() => {
     return moviesRequest.value?.items || [];
   });
-     
+
 
 
   const getMoviesList = () => {

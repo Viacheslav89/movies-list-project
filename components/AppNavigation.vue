@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import AppFilter from "./AppFilter.vue";
+// import AppFilter from "./AppFilter.vue";
 
 const { isHorizontalList } = useMovies();
 const buttonTitle = computed(() =>
@@ -38,6 +38,7 @@ const changeDisplayElements = () => {
   display: flex;
   justify-content: space-between;
   min-height: 90px;
+  min-width: 1000px;
 
   &__wrapper {
     width: 1000px;
