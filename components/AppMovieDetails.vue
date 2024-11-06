@@ -43,9 +43,6 @@ const movie = moviesList.value.find(
   (movie: Movie) => movie.kinopoiskId.toString() === id
 );
 
-if (!movie?.kinopoiskId) {
-  throw createError({ statusCode: 404, statusMessage: "Movie not found" });
-}
 </script>
 
 <style scoped lang="scss">
