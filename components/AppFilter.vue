@@ -8,8 +8,10 @@
 
 
 <script setup lang="ts">
+import { useMyMovieStore } from '~/stores/movies';
+
 const searchMovieInput = ref('');
-const { searchMovieName } = useMovies();
+const store = useMyMovieStore();
 
 watch(
   () => searchMovieInput.value,
@@ -33,7 +35,7 @@ const debounce = <T extends Function>(fn: T, ms: number) => {
 };
 
 const setSearchMovieName = debounce(
-  () => searchMovieName.value = searchMovieInput.value,
+  () => store.searchMovieName = searchMovieInput.value,
   750
 );
 </script>

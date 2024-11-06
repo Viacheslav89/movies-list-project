@@ -16,8 +16,8 @@
   </div>
 </template>
 
+
 <script setup lang="ts">
-// import AppNavigation from "./AppNavigation.vue"
 
 const { totalPages, page, fetchMovies } = useMovies();
 

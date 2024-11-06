@@ -34,8 +34,6 @@
 
 <script setup lang="ts">
 import type { Movie } from './../type';
-// import AppNavigation from './AppNavigation.vue';
-
 
 const { id } = useRoute().params;
 const { moviesList } = useMovies();

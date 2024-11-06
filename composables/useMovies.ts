@@ -1,12 +1,12 @@
 import axios from "axios";
-import type { MoviesRequest, Movie, SearchFn } from "../type";
+import type { MoviesRequest } from "../type";
+import { useMyMovieStore } from "./../stores/movies";
+
+const store = useMyMovieStore();
 
 const moviesRequest = ref<MoviesRequest | null>(null);
-const searchMovieName = ref("");
-const isHorizontalList = ref<boolean>(false);
 const page = ref(1);
 const totalPages = ref(0);
-
 
 export const useMovies = () => {
   const fetchMovies = async () => {
@@ -35,17 +35,8 @@ export const useMovies = () => {
     return moviesList.value.filter(
       (movie) =>
         movie.nameRu &&
-        movie.nameRu.toLowerCase().includes(searchMovieName.value.toLowerCase())
+        movie.nameRu.toLowerCase().includes(store.searchMovieName.toLowerCase())
     );
   };
-  return { page, totalPages, moviesList, searchMovieName, isHorizontalList, getMoviesList, fetchMovies };
+  return { page, totalPages, moviesList, getMoviesList, fetchMovies };
 };
-
-
-watch(
-  () => searchMovieName.value,
-  (newData, oldData) => {
-    if (newData !== oldData) {
-    }
-  }
-);

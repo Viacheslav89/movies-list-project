@@ -1,11 +1,11 @@
 <template>
-  <div :class="['movie', { 'movie__horizontal-list': isHorizontalList }]">
+  <div :class="['movie', { 'movie__horizontal-list': store.isHorizontalList }]">
     <NuxtLink
       :to="`/${movie.kinopoiskId}`"
       :class="[
         'movie__link',
         {
-          'movie__link--horizontal-list': isHorizontalList,
+          'movie__link--horizontal-list': store.isHorizontalList,
         },
       ]"
     >
@@ -13,13 +13,13 @@
         :src="movie.posterUrlPreview"
         :class="[
           'movie__img',
-          { 'movie__img--horizontal-list': isHorizontalList },
+          { 'movie__img--horizontal-list': store.isHorizontalList },
         ]"
       />
       <p
         :class="[
           'movie__title',
-          { 'movie__title--horizontal-list': isHorizontalList },
+          { 'movie__title--horizontal-list': store.isHorizontalList },
         ]"
       >
         {{ movie.nameRu }}
@@ -29,9 +29,11 @@
 </template>
 
 <script setup lang="ts">
+import { useMyMovieStore } from './../stores/movies'
 const { movie } = defineProps(["movie"]);
 
-const { isHorizontalList } = useMovies();
+const store = useMyMovieStore();
+
 </script>
 
 <style lang="scss" scoped>

@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@nuxthub/core": "^0.8.3",
+    "@pinia/nuxt": "^0.7.0",
     "axios": "^1.7.7",
-    "nuxt": "^3.13.2",
+    "nuxt": "^3.7.1",
+    "pinia": "^2.2.6",
     "vue": "latest",
     "vue-axios": "^3.5.2",
     "vue-router": "latest"
@@ -20,5 +22,10 @@
   "devDependencies": {
     "sass-embedded": "^1.80.4",
     "wrangler": "^3.83.0"
-  }
+  },
+  "description": "Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

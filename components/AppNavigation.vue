@@ -20,15 +20,16 @@
 </template>
 
 <script setup lang="ts">
-// import AppFilter from "./AppFilter.vue";
+import { useMyMovieStore } from './../stores/movies'
 
-const { isHorizontalList } = useMovies();
+const store = useMyMovieStore();
+
 const buttonTitle = computed(() =>
-  isHorizontalList.value ? "Блок" : "Список"
+  store.isHorizontalList ? "Блок" : "Список"
 );
 
 const changeDisplayElements = () => {
-  isHorizontalList.value = !isHorizontalList.value;
+  store.isHorizontalList = !store.isHorizontalList;
 };
 </script>
 
