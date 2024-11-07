@@ -4,9 +4,9 @@
   </div>
 </template>
 
-<script setup>
-// definePageMeta({
-//   layouts: "/",
-// });
-</script>
+<!-- <script setup>
+definePageMeta({
+  layouts: "/",
+});
+</script> -->
 

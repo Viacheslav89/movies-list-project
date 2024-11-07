@@ -2,8 +2,8 @@
   <AppCatalog />
 </template>
 
-<script setup>
+<!-- <script setup>
 definePageMeta({
   layouts: "/",
 });
-</script>
+</script> -->

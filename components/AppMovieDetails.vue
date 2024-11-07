@@ -48,7 +48,7 @@ const movie = moviesList.value.find(
 <style scoped lang="scss">
 .movie {
   background-color: rgb(26, 25, 25);
-  height: 1200px;
+  height: 2000px;
   padding-top: 50px;
   min-width: 1000px;
   
