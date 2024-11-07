@@ -5,7 +5,7 @@
       :class="[
         'pagination__button',
         {
-          'pagination__button--current': page === pageNumber,
+          'pagination__button--current': currentPage === pageNumber,
         },
       ]"
       v-for="pageNumber in totalPages"
@@ -19,14 +19,14 @@
 
 <script setup lang="ts">
 
-const { totalPages, page, fetchMovies } = useMovies();
+const { totalPages, currentPage, fetchMovies } = useMovies();
 
-const changePageNamber = (currentPage: number) => {
-  page.value = currentPage;
+const changePageNamber = (page: number) => {
+  currentPage.value = page;
 };
 
 watch(
-  () => page.value,
+  () => currentPage.value,
   (newData: number, oldData: number) => {
     if (newData !== oldData) {
       fetchMovies();
