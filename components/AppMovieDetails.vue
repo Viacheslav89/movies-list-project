@@ -5,6 +5,7 @@
     <div class="movie__wrapper">
       <div class="movie__wrapper--description">
         <div class="movie__header-wrapper">
+          
           <h4 class="movie__title">{{ movie?.nameRu }}</h4>
 
           <div class="movie__rating">
