@@ -1,23 +1,27 @@
 <template>
   <div class="form">
     <div class="form__input--wrapper">
-      <input type="search" class="form__input" v-model="searchMovieInput" placeholder="Search"/>
+      <input
+        type="search"
+        class="form__input"
+        v-model="searchMovieInput"
+        placeholder="Search"
+      />
     </div>
   </div>
 </template>
 
-
 <script setup lang="ts">
-import { useMyMovieStore } from './../stores/movies';
+import { useMovies } from "./../composables/useMovies";
 
-const searchMovieInput = ref('');
-const store = useMyMovieStore();
+const searchMovieInput = ref("");
+const { searchMovieName } = useMovies();
 
 watch(
   () => searchMovieInput.value,
   (newData: string, oldData: string) => {
     if (newData !== oldData) {
-        setSearchMovieName();
+      setSearchMovieName();
     }
   }
 );
@@ -35,26 +39,22 @@ const debounce = <T extends Function>(fn: T, ms: number) => {
 };
 
 const setSearchMovieName = debounce(
-  () => store.searchMovieName = searchMovieInput.value,
+  () => (searchMovieName.value = searchMovieInput.value),
   750
 );
 </script>
 
-
-
 <style setup lang="scss">
-
 .form__input--wrapper {
-    padding-top: 20px;
-    padding-right: 10px;
+  padding-top: 20px;
+  padding-right: 10px;
 }
 
 .form__input {
-    width: 350px;
-    height: 30px;
-    border-radius: 8px;
-    padding-left: 10px;
-    font-size: 18px;
+  width: 350px;
+  height: 30px;
+  border-radius: 8px;
+  padding-left: 10px;
+  font-size: 18px;
 }
-
 </style>

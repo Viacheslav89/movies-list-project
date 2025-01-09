@@ -29,11 +29,10 @@
 </template>
 
 <script setup lang="ts">
-import { useMyMovieStore } from './../stores/movies'
+import { useMyMovieStore } from "./../stores/movies";
 const { movie } = defineProps(["movie"]);
 
 const store = useMyMovieStore();
-
 </script>
 
 <style lang="scss" scoped>

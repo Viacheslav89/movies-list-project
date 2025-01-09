@@ -1,5 +1,5 @@
 <template>
-    <AppNavigation />
+  <AppNavigation />
 
   <div class="movie">
     <div class="movie__wrapper">
@@ -33,16 +33,14 @@
 </template>
 
 <script setup lang="ts">
-import type { Movie } from './../type';
+import type { Movie } from "./../type";
 
 const { id } = useRoute().params;
 const { moviesList } = useMovies();
 
-
 const movie = moviesList.value.find(
   (movie: Movie) => movie.kinopoiskId.toString() === id
 );
-
 </script>
 
 <style scoped lang="scss">
@@ -51,7 +49,6 @@ const movie = moviesList.value.find(
   height: 2000px;
   padding-top: 50px;
   min-width: 1000px;
-  
 
   &__wrapper {
     width: 800px;
@@ -62,10 +59,8 @@ const movie = moviesList.value.find(
 
   &__wrapper--description {
     background-color: rgb(226, 226, 226);
-    // width: 100%;
     padding-left: 30px;
     padding-bottom: 20px;
-
   }
 
   &__header-wrapper {
@@ -109,14 +104,12 @@ const movie = moviesList.value.find(
 
   &__image--wrapper {
     width: 500px;
-    // height: 100%;
   }
 
   &__image {
     display: block;
     height: 100%;
     width: 100%;
-
   }
 }
 </style>

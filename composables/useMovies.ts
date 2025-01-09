@@ -1,16 +1,14 @@
 import axios from "axios";
 import type { MoviesRequest } from "../type";
-import { useMyMovieStore } from "./../stores/movies";
-
-const store = useMyMovieStore();
 
 const moviesRequest = ref<MoviesRequest | null>(null);
 const currentPage = ref(1);
 const totalPages = ref(0);
 
+const searchMovieName = ref("");
+
 export const useMovies = () => {
   const fetchMovies = async () => {
-
     const response = await axios.get(
       `https://kinopoiskapiunofficial.tech/api/v2.2/films?order=RATING&type=ALL&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=${currentPage.value}`,
       {
@@ -22,22 +20,25 @@ export const useMovies = () => {
 
     moviesRequest.value = response.data;
     totalPages.value = response.data.totalPages;
-    // console.log(response.data)
   };
-
 
   const moviesList = computed(() => {
     return moviesRequest.value?.items || [];
   });
 
-
-
   const getMoviesList = () => {
     return moviesList.value.filter(
       (movie) =>
         movie.nameRu &&
-        movie.nameRu.toLowerCase().includes(store.searchMovieName.toLowerCase())
+        movie.nameRu.toLowerCase().includes(searchMovieName.value.toLowerCase())
     );
   };
-  return { currentPage, totalPages, moviesList, getMoviesList, fetchMovies };
+  return {
+    currentPage,
+    totalPages,
+    moviesList,
+    getMoviesList,
+    fetchMovies,
+    searchMovieName,
+  };
 };

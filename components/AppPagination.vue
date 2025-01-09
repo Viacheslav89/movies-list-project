@@ -16,9 +16,7 @@
   </div>
 </template>
 
-
 <script setup lang="ts">
-
 const { totalPages, currentPage, fetchMovies } = useMovies();
 
 const changePageNamber = (page: number) => {

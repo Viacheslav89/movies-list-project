@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { useMyMovieStore } from './../stores/movies'
+import { useMyMovieStore } from "./../stores/movies";
 
 const store = useMyMovieStore();
 
